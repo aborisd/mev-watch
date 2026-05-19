@@ -1,0 +1,23 @@
+.env
+.env.local
+.env.*.local
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+node_modules/
+.next/
+out/
+dist/
+build/
+*.log
+.DS_Store
+pgdata/
+caddy_data/
+caddy_config/
+
+# Claude Code local settings (may contain user-approved commands with secrets)
+.claude/settings.local.json

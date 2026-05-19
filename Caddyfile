@@ -1,0 +1,20 @@
+{$CADDY_DOMAIN} {
+    encode gzip
+
+    handle /api/* {
+        reverse_proxy api:8000
+    }
+
+    handle /docs* {
+        reverse_proxy api:8000
+    }
+
+    handle /openapi.json {
+        reverse_proxy api:8000
+    }
+
+    # Frontend (Next.js)
+    handle {
+        reverse_proxy web:3000
+    }
+}
