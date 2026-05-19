@@ -36,7 +36,8 @@
 ```bash
 git clone <repo> && cd mev-watch
 cp .env.example .env && $EDITOR .env       # fill Chainstack, strong pass, domain
-docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+# (см. §3.1 — для прода добавить docker-compose.prod.yml override, закрывающий внутренние порты)
+docker compose up -d
 ```
 
 Детали — в §4–§6.
@@ -47,7 +48,7 @@ docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 
 ### 3.1 Обязательно (MUST)
 
-1. **Прокрутить Chainstack ключ.** Текущий засветился в чате и в истории коммитов — завести новый в [Chainstack Console](https://console.chainstack.com/), старый удалить.
+1. **Прокрутить Chainstack ключ перед прод-деплоем.** Сгенерировать свежий в [Chainstack Console](https://console.chainstack.com/), прописать в `.env` на сервере; ключ из локальной разработки в репозиторий не попадает (`.env` в `.gitignore`).
 2. **Сильный `POSTGRES_PASSWORD`.** Дефолт `mev_change_me` — заменить на 32-символьный случайный (например `openssl rand -base64 32`).
 3. **Закрыть порты в проде.** Сейчас `postgres:5432`, `api:8001`, `web:3000` торчат на host'е — для локалки ок, для паблик-VPS нет. Создать `docker-compose.prod.yml` с override: убрать все `ports:` кроме caddy (80/443). Доступ к API — только через `https://<domain>/api/*`.
 4. **Реальный домен в `CADDY_DOMAIN`.** Заменить `:80` на `mev.yourdomain.com` — Caddy автоматически получит Let's Encrypt сертификат.

@@ -142,7 +142,7 @@ All settings live in `.env` (see `.env.example`). Key knobs:
 
 ---
 
-## Validation (Day 1 acceptance)
+## Validation
 
 1. `docker compose up -d postgres` — tables exist, TimescaleDB extension active.
    ```bash
