@@ -4,6 +4,8 @@ Real-time MEV detection on Ethereum. Detects sandwich attacks and JIT
 liquidity on Uniswap V2 / V3, computes honest net profit (gross − gas),
 and exposes everything over a public REST + SSE API.
 
+![MEV-Watch UI — live dashboard showing sandwich attacks and JIT extractions](docs/screenshot.png)
+
 **Status:** MVP complete — ingester, detector, REST + SSE API, and a
 Next.js web UI. Ships as a single `docker compose up` with optional
 Caddy for HTTPS.
