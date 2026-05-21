@@ -10,6 +10,9 @@ Caddy for HTTPS.
 
 ---
 
+<img width="2000" height="1375" alt="image" src="https://github.com/user-attachments/assets/c912ec16-8660-4b8c-826f-0cb74d004497" />
+
+
 ## Quick start
 
 ```bash
