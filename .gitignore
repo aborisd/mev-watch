@@ -21,3 +21,6 @@ caddy_config/
 
 # Claude Code local settings (may contain user-approved commands with secrets)
 .claude/settings.local.json
+
+# Local docker-compose overrides (per-machine port remappings etc.)
+docker-compose.override.yml
