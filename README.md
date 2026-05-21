@@ -257,8 +257,3 @@ All settings live in `.env` (see `.env.example`). Key knobs:
 
 ---
 
-## Author
-
-Built by **aborisd** —
-[Instagram](https://instagram.com/aborisd) ·
-[GitHub](https://github.com/aborisd).
